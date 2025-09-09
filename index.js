@@ -8,14 +8,18 @@ const connection = mysql.createConnection({
     password: 'asdfghjkl'
 });
 
+let q="INSERT INTO user (id, username, email,password)VALUES(?,?,?,?)";
+let user=["123","123_newuser","abc@gmail.com","abs"];
 try{
-    connection.query("SHOW TABLES", (err, result) => {
+    connection.query(q, user,(err, result) => {
     if (err) throw err;
     console.log(result);
 });
 }catch(err){
     console.log(err);
 }
+
+connection.end();
 
 let createRandomUser = () => {
   return {
