@@ -1,12 +1,12 @@
 {
   "dependencies": {
-    "@faker-js/faker": "^10.0.0"
+    "@faker-js/faker": "^10.0.0",
+    "mysql2": "^3.14.5"
   },
   "name": "data-base",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
