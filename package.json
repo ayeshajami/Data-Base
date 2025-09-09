@@ -1,14 +1,23 @@
 {
+  "dependencies": {
+    "@faker-js/faker": "^10.0.0"
+  },
   "name": "data-base",
   "version": "1.0.0",
+  "description": "",
   "main": "index.js",
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ayeshajami/Data-base.git"
+  },
   "author": "Aisha",
   "license": "ISC",
-  "description": "",
-  "dependencies": {
-    "@faker-js/faker": "^10.0.0"
-  }
+  "bugs": {
+    "url": "https://github.com/ayeshajami/Data-base/issues"
+  },
+  "homepage": "https://github.com/ayeshajami/Data-base#readme"
 }

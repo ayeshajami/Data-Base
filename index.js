@@ -1,6 +1,5 @@
-const { faker } = require('@faker-js/faker');
 
-let   createRandomUser=() =>{
+export function createRandomUser() {
   return {
     userId: faker.string.uuid(),
     username: faker.internet.username(),
@@ -10,5 +9,4 @@ let   createRandomUser=() =>{
     birthdate: faker.date.birthdate(),
     registeredAt: faker.date.past(),
   };
-}; 
-console.log(createRandomUser());
+}
