@@ -24,7 +24,7 @@ const bookSchema=new mongoose.Schema({
     },
     price:{
         type:Number,
-        min:50,
+        min:[50,"price is too low"],
     },
     discount:{
         type:Number,
@@ -34,24 +34,28 @@ const bookSchema=new mongoose.Schema({
         type:String,
         enum:["fiction","non-fiction"],
     },
-    genre:[string],
+    genre: [String],
+
 });
 
 const Book=mongoose.model("Book",bookSchema);
 
-let book1= new Book({
-    title:"Mathematics",
-    author:"RD Sharma",
-    price:1200,
-    category:"fiction",
-    genre:["comics","superheroes","fiction"],
-});
-
-book1
-  .save()
-  .then((res) => {
-    console.log(res);
-  })
-  .catch((err) => {
+Book.findByIdAndUpdate("68c486771d031c1b3fb888e8",{price:100},{runValidators:true}).then((res)=>{console.log(res)}).catch((err)=>{
     console.log(err);
-  });
+});
+//  let book1= new Book({
+//     title:"Mathematics",
+//     author:"RD Sharma",
+//     price:1200,
+//     category:"fiction",
+//     genre:["comics","superheroes","fiction"],
+// });
+
+// book1
+//   .save()
+//   .then((res) => {
+//     console.log(res);
+//   })
+//   .catch((err) => {
+//     console.log(err);
+//   });
