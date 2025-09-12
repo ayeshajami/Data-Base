@@ -15,12 +15,15 @@ async function main(){
 const bookSchema=new mongoose.Schema({
     title:{
         type:String,
+        required:true,
     },
         
     author:{
         type:String,
     },
     price:{
-        type:Number,,
+        type:Number,
     },
 });
+
+const Book=mongoose.model("Book",bookSchema);
