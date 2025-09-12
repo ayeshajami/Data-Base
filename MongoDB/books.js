@@ -16,6 +16,7 @@ const bookSchema=new mongoose.Schema({
     title:{
         type:String,
         required:true,
+        maxLength:20,
     },
         
     author:{
@@ -23,11 +24,17 @@ const bookSchema=new mongoose.Schema({
     },
     price:{
         type:Number,
+        min:50,
     },
     discount:{
         type:Number,
         default:0,
     },
+    category:{
+        type:String,
+        enum:["fiction","non-fiction"],
+    },
+    genre:[string],
 });
 
 const Book=mongoose.model("Book",bookSchema);
@@ -35,7 +42,9 @@ const Book=mongoose.model("Book",bookSchema);
 let book1= new Book({
     title:"Mathematics",
     author:"RD Sharma",
-    price:1200
+    price:1200,
+    category:"fiction",
+    genre:["comics","superheroes","fiction"],
 });
 
 book1
