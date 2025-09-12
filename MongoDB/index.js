@@ -21,11 +21,17 @@ const userSchema=new mongoose.Schema({
 const User = mongoose.model("User",userSchema);
 
 
-User.find({age:{$gt:15}}).then((res)=>{
-    console.log(res[0].name);
+User.updateOne({name:"Aisha"},{age:40}).then((res)=>{
+    console.log(res);
 }).catch((err)=>{
     console.log(err);
 });
+
+// User.find({age:{$gt:15}}).then((res)=>{
+//     console.log(res[0].name);
+// }).catch((err)=>{
+//     console.log(err);
+// });
 
 // User.insertMany([
 //     {name:"Amna",email:"amna@gmail.com",age:15},
