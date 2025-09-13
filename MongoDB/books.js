@@ -40,8 +40,8 @@ const bookSchema=new mongoose.Schema({
 
 const Book=mongoose.model("Book",bookSchema);
 
-Book.findByIdAndUpdate("68c486771d031c1b3fb888e8",{price:100},{runValidators:true}).then((res)=>{console.log(res)}).catch((err)=>{
-    console.log(err);
+Book.findByIdAndUpdate("66c486771d031c1b3fb888e8",{price:100},{runValidators:true}).then((res)=>{console.log(res)}).catch((err)=>{
+    console.log(err.errors.price.properties.message);
 });
 //  let book1= new Book({
 //     title:"Mathematics",
