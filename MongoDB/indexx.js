@@ -51,10 +51,19 @@ app.post("/chats",(req,res)=>{
         from:from,
         to:to,
         msg:msg,
-        created_at:new Data(),
+        created_at: new Date(),
+
     });
-    console.log(newChat);
-    res.send("working");
+newChat
+        .save()
+        .then((result) => {
+            console.log("chat was saved", result);
+            res.redirect("/chats");  
+        })
+        .catch((err) => {
+            console.log(err);
+            res.send("Error saving chat");
+        });
 });
 
 app.get("/", (req, res) => {
