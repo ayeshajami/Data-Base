@@ -37,7 +37,10 @@ app.get("/chats", async (req, res) => {
     res.render("index.ejs", { chats });
 });
 
-
+//new route
+app.get("/chats/new",(req,res)=>{
+    res.render("new.ejs");
+});
 
 app.get("/", (req, res) => {
   res.send("root is working");
