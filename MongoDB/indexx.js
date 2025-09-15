@@ -38,9 +38,11 @@ app.get("/chats", async (req, res) => {
 });
 
 //new route
-app.get("/chats/new",(req,res)=>{
+app.get("/chats/new", (req, res) => {
     res.render("new.ejs");
 });
+
+
 
 app.get("/", (req, res) => {
   res.send("root is working");
