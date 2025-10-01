@@ -7,7 +7,8 @@ const app=express();
 // });
 
 app.use((req,res,next)=>{
-    console.log(req);
+    req.time=new Date(Date.now());
+    console.log(req.method,req.hostname,req.path,req.time);
     next();
 });
 
