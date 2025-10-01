@@ -8,10 +8,14 @@ const app=express();
 
 
 //logger-morgan
-app.use((req,res,next)=>{
-    req.time=new Date(Date.now());
-    console.log(req.method,req.hostname,req.path,req.time);
-    next();
+// app.use((req,res,next)=>{
+//     req.time=new Date(Date.now());
+//     console.log(req.method,req.hostname,req.path,req.time);
+//     next();
+// });
+
+app.get("/api",(req,res)=>{
+    res.send("data");
 });
 
 app.get("/",(req,res)=>{
