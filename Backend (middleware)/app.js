@@ -13,8 +13,14 @@ const app=express();
 //     console.log(req.method,req.hostname,req.path,req.time);
 //     next();
 // });
+const checkToken=(req,res,next)=>{
+    let{token}=req.query;
+    if(token==="giveaccess"){
+        res.send("Access Denied!");
+    }
+};
 
-app.get("/api",(req,res)=>{
+app.get("/api",checkToken,(req,res)=>{
     res.send("data");
 });
 
