@@ -1,8 +1,9 @@
 const express = require("express");
 const app=express();
 
-app.use(()=>{
+app.use((req,res)=>{
     console.log("Hi, I am middleware");
+    res.send("middleware finished");
 });
 
 app.get("/",(req,res)=>{
