@@ -6,6 +6,8 @@ const app=express();
 //     next();
 // });
 
+
+//logger-morgan
 app.use((req,res,next)=>{
     req.time=new Date(Date.now());
     console.log(req.method,req.hostname,req.path,req.time);
